@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>АСО #1</title>
+    <link href="materialize/css/materialize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <br/>
+    <div class="row">
+        <div class="col s3">
+            <ul class="collapsible popout" data-collapsible="expandable">
+                <li>
+                    <div class="collapsible-header">Генератор случайных величин</div>
+                    <div class="collapsible-body container">
+                        <div class="row">
+                            <form class="col s12">
+                                <br/>
+                                <div class="row">
+                                    <div class="range-field col s12">
+                                        <input id="rng-mean" type="range" id="alpha" min="-1" max="1" value="0.0" step="0.01"/>
+                                        <label for="alpha">Mean</label>
+                                    </div>
+                                    <div class="range-field col s12">
+                                        <input id="rng-var" type="range" id="alpha" min="0.001" max="0.05" value="0.008" step="0.001"/>
+                                        <label for="alpha">Variance</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Параметры</div>
+                    <div class="collapsible-body container">
+                        <t class="row">
+                            <br/>
+                            <p class="range-field col s12">
+                                <input id="num-points" type="range" min="100" max="400" value="200"/>
+                                <label for="num-points">Количество точек</label>
+                            </p>
+                            <p class="range-field col s12">
+                                <input id="alpha" type="range" min="0.0" max="1.0" value="0.5" step="0.1"/>
+                                <label for="alpha">α</label>
+                            </p>
+                        </t>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header active">Результаты</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+            </ul>
+            <div class="row center-align">
+                <a href="#"
+                   class="btn waves-effect waves-light"
+                   name="action"
+                   id='btn-calculate'>
+                    Пересчитать
+                </a>
+            </div>
+        </div>
+
+        <div class="col s9">
+            <div class="container">
+                <div class="row center-align">
+                    <div class="col s12">
+                        <div class="card-panel hoverable">
+                            <div id="plot"></div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card-panel hoverable">
+                            <div id="plot2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="application/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="application/javascript" src="node_modules/hammerjs/hammer.js"></script>
+    <script type="application/javascript" src="nouislider/nouislider.js"></script>
+    <script type="application/javascript" src="materialize/js/materialize.js"></script>
+    <script type="application/javascript" src="node_modules/d3/d3.min.js"></script>
+    <script type="application/javascript" src="node_modules/chartjs/chart.js"></script>
+    <script type="application/javascript" src="lib/app.js"></script>
+
+    <script>
+        calculate();
+    </script>
+
+</body>
+</html>
